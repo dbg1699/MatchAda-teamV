@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5b0f89b18e.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!--LIBRERIA VENTANA MODAL-->
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script> <!--LIBRERIA EMOJIS-->
+    <link rel="stylesheet" href="styles.css">
+    <title>MatchesAda</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Match Adas</h1>
+        <div class="check" id="check">
+            <div class="points">
+                <p>Combos x<span>1</span></p>
+                <p>Puntos: <span>0</span></p>
+            </div>
+
+            <div class="points">
+                <button class="btn-ayuda">
+                    <i class="fas fa-info-circle"></i>
+                </button>
+                <button class="btn-information">
+                    <i class="fas fa-undo-alt"></i>
+                </button>
+            </div>
+        </div>
+        <div id="grid" class="grid" data-type=""></div>
+
+        <div id="time" class="time">
+            <i class="fas fa-hourglass-half"></i>
+            <p>30</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
