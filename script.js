@@ -1,28 +1,47 @@
-swal("Hello world!");
+//VENTANAS MODALES
+swal({ 
+  title: " ¡Bienvenida!",
+  text:"Tu objetivo es juntar tres o mas items del mismo tipo, ya sea en fila o en columna. Para eso selecciona item y luego un item adyacente para intercambiarlos",
+}).then(() => {
+   swal({
+       title: "Nuevo Juego",
+       text: "Seleccina una dificultad",
+       buttons: {
+           facil: true,
+              confirm: "Normal",
+              roll: {
+                  text: "Dificil",
+                  value: "roll",
+              },
+           
+      },
+  });
+});
 
-const emoji = document.createElement('div');
-emoji.textContent = ' \ud83c\udf3c emoji!';
-document.body.appendChild(emoji);
+//CRONOMETRO
+let chronometer = 30; //esta es la variable de los segundos, o sea 30 segundos
+    let time = document.getElementById("time");
+    window.setInterval(function(){
+    time.innerHTML = chronometer;
+    chronometer--; //esta variable es para que el tiempo disminuya, cuando es ++ es para que se sume de uno en uno
+    
+    },1000); // esos 2000 son equivale a un segundo
 
-twemoji.parse(document.body);
+    let selectedItem = null;
 
-const img = emoji.querySelector('img');
+//MATRIZ CON EMOJIS
+let emojis = ;//?
+const matriz = (tamaño) =>{
+  for(let i = 0 ; i < tamaño; i++ ){
+    let filas = [];
+    for (let j = 0 ; j < tamaño; j++)
+    const celdas= Math.round(Math.random()*(emojis.length-1));//
 
-// note the div is preserved
-img.parentNode === emoji; // true
-
-img.src;        // https://twemoji.maxcdn.com/v/latest/72x72/2764.png
-img.alt;        // \ud83c\udf3c
-img.className;  // emoji
-img.draggable;  // false
-
-function generatorImage(icon, options) { //generar iconos concatenados
-    return '\ud83c\udf3c, \ud83c\udf35'.concat(
-      options.base, // by default Twitter Inc. CDN
-      options.size, // by default "72x72" string
-      '/',
-      icon,         // the found emoji as code point
-      options.ext   // by default ".png"
-    );
   }
-  
+}
+      
+      
+    
+
+
+    
