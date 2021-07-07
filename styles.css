@@ -1,65 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     }
     
-    body{
-    background-image: url(https://img.freepik.com/vector-gratis/paisaje-granja-diseno-plano_52683-9442.jpg?size=626&ext=jpg);
+body{
+    background-image: url(33786.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color: #000;
     display: flex;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    }
+}
     
-    h1{
-        color:blueviolet;
-        text-align: center;
-        font-size:60px;
-    }
+h1{
+    -webkit-text-stroke: 1px #3A6351;
+    color: transparent; 
+    text-align: center;
+    font-size:70px;
+    font-family: 'Dancing Script', cursive;
+}
     
-    .container{
-        width: 500px;
-        height: 100%;
-        padding: 20px 0;
-        margin-top: 20px;
-        background-color: transparent;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
+.container{
+    width: 500px;
+    height: 100%;
+    padding: 20px 0;
+    margin-top: 20px;
+    background-color: transparent;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     
-    button{
-        width: 35px;
-        height: 35px;
-        background-color: transparent;
-        color: #FFF;
-        font-size: 20px;
-        border-style: none;
-    }
+}
     
-    .grid{
-        width: 504px;
-        height: 504px;
-        border-radius: 5px;
-        background-color:rgb(255 255 255 / 40%);
-        border: 4px #01937C solid;
-        position: relative;
-    }
+button{
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    color: #FFF;
+    font-size: 20px;
+    border-style: none;
+}
     
-    .check{
-        width: 520px;
-        height: 60px;
-        background-color: #01937C;
-        color: #FFF;
-        font-size: 25px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: row;
-        margin: 20px 0;  
-        filter: drop-shadow(2px 2px 2px #3b3636) ;  
+.grid{
+    width: 504px;
+    height: 504px;
+    border-radius: 5px;
+    background-color:rgb(255 255 255 / 40%);
+    border: 4px #7ECA9C solid;
+    position: relative;
+}
+    
+.check{
+    width: 520px;
+    height: 60px;
+    background-color: #7ECA9C;
+    color: #FFF;
+    font-size: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;  
+    filter: drop-shadow(1px 1px 1px #BBBBBB) ;  
+}
+
+.swal-button {
+    height: auto;
+    width: auto;
+   padding: 7px 19px;
+   border-radius: 2px;
+   background-color: #7ECA9C;
+   font-size: 18px;
+   border: 1px solid #7ECA9C;
+   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+ }
+
+.swal-title{
+   font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-size: 30px;
+   color: #01937C;
+}
+.swal-text{
+   font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-size: 20px;
+   color: #01937C;
+}
+
+.celda{
+  transition: background-color 0.4s, top 0.4s, left 0.4s, bottom 0.4s, right 0.4s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid #064420;
+}
+
+/**{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+    .matrix{
+      height:504px;
+      width:504px;
+      position:relative;
+      background-color:#555;
+    }
+    .cell{
+      transition: background-color 0.4s, top 0.4s, left 0.4s, bottom 0.4s, right 0.4s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      border-radius: 5px;
+      border: 1px solid red;
+    }
+    .cell--selected{
+      background-color:red;
+    }
+
+    <div class="matrix" id="matrix"></div>
+
+    */
