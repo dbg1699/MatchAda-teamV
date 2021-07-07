@@ -73,21 +73,21 @@ button{
     width: auto;
    padding: 7px 19px;
    border-radius: 2px;
-   background-color: #e7adf8;
+   background-color: #7ECA9C;
    font-size: 18px;
-   border: 1px solid #e7adf8;
+   border: 1px solid #7ECA9C;
    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
  }
 
 .swal-title{
    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
    font-size: 30px;
-   color: rgb(131, 13, 228);
+   color: #01937C;
 }
 .swal-text{
    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
    font-size: 20px;
-   color: blueviolet;
+   color: #01937C;
 }
 
 .celda{
@@ -97,7 +97,7 @@ button{
   justify-content: center;
   position: absolute;
   border-radius: 5px;
-  border: 1px solid blueviolet;
+  border: 1px solid #064420;
 }
 
 /**{
