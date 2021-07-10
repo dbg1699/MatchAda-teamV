@@ -5,7 +5,7 @@ swal({
 }).then(() => {
    swal({
        title: "Nuevo Juego",
-       text: "Seleccina una dificultad",
+       text: "Selecciona una dificultad",
        buttons: {
            facil: true,
               confirm: "Normal",
@@ -18,14 +18,20 @@ swal({
   });
 });
 
+//Cambiar de nivel- fácil, normal, díficil
+
+const cambiarNivel= () => {
+
+}
+
 //CRONOMETRO
-let chronometer = 30; //esta es la variable de los segundos, o sea 30 segundos
-    let time = document.getElementById("time");
+let cronometro = 30; //esta es la variable de los segundos, o sea 30 segundos
+    let tiempo = document.getElementById("tiempo");
     window.setInterval(function(){
-    time.innerHTML = chronometer;
-    chronometer--; //esta variable es para que el tiempo disminuya, cuando es ++ es para que se sume de uno en uno
+    tiempo.innerHTML = cronometro;
+    cronometro--; //esta variable es para que el tiempo disminuya, cuando es ++ es para que se sume de uno en uno
     
-    },1000); // esos 2000 son equivale a un segundo
+    },1000);
 
     let selectedItem = null;
 
@@ -49,18 +55,18 @@ const crearGrilla = () => {
     }
   };
                 
-//Funcion para Obtener el emoji de forma Random 
+//Funcion para obtener el emoji de forma Random 
 const emojiAleatorio = () => {
   const indice = Math.round(Math.random() * (arrayEmojis.length - 1));
   return arrayEmojis[indice];
 };
 
+//Función crear celda y darle estilos
 const crearCelda = (columna, fila, emoji) => {
-
     const celda = document.createElement('div');
     celda.classList.add('celda');
     celda.innerHTML = emoji;
-    celda.addEventListener('click',clickCelda);  
+    celda.addEventListener('click',jugar);  
 
     celda.style.top = `${fila * tamanioCelda}px`;
     celda.style.left = `${columna * tamanioCelda}px`;
@@ -69,23 +75,51 @@ const crearCelda = (columna, fila, emoji) => {
   
     celda.dataset.columna = columna;
     celda.dataset.fila = fila;
-    
+
+  
     return celda;
+    
   };
+  
+  //Función jugar
+  const jugar = async (e) =>{
+    if(primerElemento == null){
+      primerElemento = e.target;
+    }
+    else if (primerElemento !=null){
+      segundoElemento = e.target; 
+      if(adyacente(primerElemento,segundoElemento)){
+        switchItems(primerElemento,segundoElemento);
 
-  const clickCelda = () =>{
-    //aun no esta hecha 
-}
+    
+      } else{
+        primerElemento = null;
+        segundoElemento = null;
+      }
+    }
+  }
+    /*//tiene que recibir un event
+    if (!primerElemento){
+      primerElemento = e.target
+    }
+    else {
+     segundoElemento= e.target
 
+     //acá resolver si los elementos son adyacentes
+    }*/
+
+  //Función ver celda
   const verCelda = (x, y) => {
     return $(`.celda[data-x="${x}"][data-y="${y}"]`);
   }
 
+  //Función ver grilla
   const verGrilla = () => {
     verEmojis();
     twemoji.parse(document.body);
   }
 
+  
   crearGrilla();
       
       

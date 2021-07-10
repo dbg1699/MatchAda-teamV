@@ -100,30 +100,3 @@ button{
   border: 1px solid #064420;
 }
 
-/**{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    .matrix{
-      height:504px;
-      width:504px;
-      position:relative;
-      background-color:#555;
-    }
-    .cell{
-      transition: background-color 0.4s, top 0.4s, left 0.4s, bottom 0.4s, right 0.4s, transform 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      border-radius: 5px;
-      border: 1px solid red;
-    }
-    .cell--selected{
-      background-color:red;
-    }
-
-    <div class="matrix" id="matrix"></div>
-
-    */
