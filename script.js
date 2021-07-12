@@ -82,15 +82,17 @@ const crearCelda = (columna, fila, emoji) => {
   };
   
   //Función jugar
-  const jugar = async (e) =>{
-    if(primerElemento == null){
+  let primerElemento= null;
+  let segundoElemento= null;
+
+  const jugar = (e) =>{
+    if(primerElemento === null){
       primerElemento = e.target;
     }
     else if (primerElemento !=null){
       segundoElemento = e.target; 
       if(adyacente(primerElemento,segundoElemento)){
-        switchItems(primerElemento,segundoElemento);
-
+        cambiarEmojis(primerElemento,segundoElemento);
     
       } else{
         primerElemento = null;
@@ -108,19 +110,55 @@ const crearCelda = (columna, fila, emoji) => {
      //acá resolver si los elementos son adyacentes
     }*/
 
-  //Función ver celda
-  const verCelda = (x, y) => {
-    return $(`.celda[data-x="${x}"][data-y="${y}"]`);
-  }
+    //  función adyacente
+    const adyacente=(primerElemento,segundoElemento)=>{
 
-  //Función ver grilla
-  const verGrilla = () => {
-    verEmojis();
-    twemoji.parse(document.body);
-  }
+      const primerElementoX= Number(primerElemento.dataset.x);
+      const primerElementoY= Number(primerElemento.dataset.y);
+      const segundoElementoX= Number(segundoElemento.dataset.x);
+      const segundoElementoY= Number(segundoElemento.dataset.y);
+    if(primerElementoX === segundoElementoX){
+      return (primerElementoY === segundoElementoY - 1) || (primerElementoY === segundoElementoY + 1);
+
+    } else if (primerElementoY === segundoElementoY){
+      return (primerElementoX === segundoElementoX -1) || (primerElementoX === segundoElementoX +1);
+    }
+      return false
+    }
+
+    //función cambiar emojis
+    const cambiarEmojis = (primerColumna, segundaColumna, primerFila, segundaFila) => {
+      const primerEmoji = grilla[primerColumna][primerFila];
+      const segundoEmoji = grilla[segundaColumna][segundaFila];
+      moverCelda(primerElemento, primerColumna, primerFila, segundoEmoji);
+      moverCelda(segundoElemento, segundaColumna, segundaFila, primerEmoji);
+    };
+
+    //funcion mover celda
+
+    const moverCelda = (celda, columna, fila, emoji) => {
+      celda.style.top = `${columna * tamanioCelda}px`;
+      celda.style.left = `${fila * tamanioCelda}px`;
+      celda.dataset.fila = fila;
+      celda.dataset.columna = columna;
+      grilla[columna][fila] = emoji;
+    }
+
+    //Función ver celda
+    const verCelda = (x, y) => {
+      return $(`.celda[data-x="${x}"][data-y="${y}"]`);
+    }
+
+    //Función ver grilla
+    const verGrilla = () => {
+      verEmojis();
+      twemoji.parse(document.body);
+    }
 
   
-  crearGrilla();
+    crearGrilla();
+  
+
       
       
     
