@@ -100,3 +100,7 @@ button{
   border: 1px solid #064420;
 }
 
+.celda-seleccionada{
+    background-color:black;
+}
+
