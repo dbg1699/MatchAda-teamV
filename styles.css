@@ -100,7 +100,15 @@ button{
   border: 1px solid #064420;
 }
 
-.celda-seleccionada{
-    background-color:black;
+.tiempo{
+background-color: #01937C;
+border-radius: 15px;
+font-size: 20px;
+align-items: center;
+width: 250px;
+height: 40px;
+margin: 40px;
+display: flex;
+justify-content: space-evenly;
+color: #FFF;
 }
-

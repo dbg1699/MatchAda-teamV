@@ -100,31 +100,7 @@ const crearCelda = (columna, fila, emoji) => {
       }
     }
   }
-    /*//tiene que recibir un event
-    if (!primerElemento){
-      primerElemento = e.target
-    }
-    else {
-     segundoElemento= e.target
-
-     //acá resolver si los elementos son adyacentes
-    }*/
-
-    //  función adyacente
-    const adyacente=(primerElemento,segundoElemento)=>{
-
-      const primerElementoX= Number(primerElemento.dataset.x);
-      const primerElementoY= Number(primerElemento.dataset.y);
-      const segundoElementoX= Number(segundoElemento.dataset.x);
-      const segundoElementoY= Number(segundoElemento.dataset.y);
-    if(primerElementoX === segundoElementoX){
-      return (primerElementoY === segundoElementoY - 1) || (primerElementoY === segundoElementoY + 1);
-
-    } else if (primerElementoY === segundoElementoY){
-      return (primerElementoX === segundoElementoX -1) || (primerElementoX === segundoElementoX +1);
-    }
-      return false
-    }
+    
 
     //función cambiar emojis
     const cambiarEmojis = (primerColumna, segundaColumna, primerFila, segundaFila) => {
